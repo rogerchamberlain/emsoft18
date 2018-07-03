@@ -4,15 +4,15 @@
 We are investigating the use of Markov Decision Processes (MDPs) to
 implement the high-level control of which mirror should be in what position.
 MDPs represent a general approach to modeling optimization
-problems~\cite{puterman} and have been applied to a diverse set of
+problems and have been applied to a diverse set of
 application areas. Examples include: robotics~\cite{ab10},
-economics~\cite{bs98}, % experiment design~\cite{White93},
+%economics~\cite{bs98}, % experiment design~\cite{White93},
 medical decisions~\cite{ahsr10}, manufacturing~\cite{yyl04},
 agriculture~\cite{Kristensen03},
-real-time scheduling~\cite{gtsg08}
+real-time scheduling~\cite{gtsg08},
 and wireless spectrum management~\cite{mgc16}.
 
-Here, we adopt the definition of Glaubius et al~\cite{gtsg08}
+Here, we adopt the definition of Glaubius et al.~\cite{gtsg08}
 of a (discrete-time) MDP as a 5-tuple
 $(\mathcal{X}, \mathcal{A}, T, R, \gamma)$, with \emph{states}
 $\chi \in \mathcal{X}$, \emph{actions} $a \in \mathcal{A}$,
@@ -45,15 +45,16 @@ represent moving the tilt motor.}
 
 We define the reward function, $R$, as having multiple components. First,
 it incorporates the match of the realized illumination pattern with a
-desired illumination pattern. Second, it includes a measure of the impact
+desired illumination pattern (using ray-tracing~\cite{acadia18}).
+Second, it includes a measure of the impact
 of mirror motion on the reliability of the mirror assemblies. Third, it
 factors in the current positioning uncertainty due to running the
-motors open loop (i.e., low undertainty when at the range limit, growing
-uncertainty with each subsequent movement).
+motors open loop (i.e., low uncertainty at the range limit, growing
+uncertainty with each movement).
 
-MDP theory~\cite{puterman} assures us that there exists a policy (choice
+MDP theory assures us that there exists a policy (choice
 of action, $a$, in each state, $\chi$) that maximizes the expected reward.
 While this policy is, in general, exponentially expensive
 to compute, we are exploring heuristics that closely match the optimal
 policy and are more computationally feasible in real time (so as to quickly
-accomodate changes in sun position, desired illumination pattern, etc.).
+accommodate changes in sun position, desired illumination pattern, etc.).

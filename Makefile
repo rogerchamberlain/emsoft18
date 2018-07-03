@@ -16,4 +16,4 @@ paper.pdf: paper.ps
 	ps2pdf -dCompatibilityLevel=1.4 -dPDFSETTINGS=/prepress paper.ps paper.pdf
 
 clean:
-	rm -f paper.dvi paper.log paper.ps paper.pdf paper.bbl paper.blg paper.aux
+	rm -f paper.dvi paper.log paper.ps paper.pdf paper.bbl paper.blg paper.aux paper.out paper.xcp
