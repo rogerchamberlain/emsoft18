@@ -6,18 +6,20 @@ unipolar 12V stepper motors, commanded over an I2C bus by an
 Arduino Uno\footnote{\url{https://www.arduino.cc}} on either end of
 each row of mirrors (see Figure~\ref{fig:mirror})~\cite{acadia18}.
 The two halves (east and west) have a
-Raspberry Pi\footnote{\url{https://www.raspberrypi.org}}
+Raspberry~Pi\footnote{\url{https://www.raspberrypi.org}}
 communicating with the Arduino Unos over USB, which also provides
 wireless connectivity to a remote PC running Rhino3D/Grasshopper.
 
 \begin{figure}[ht]
-\includegraphics[width=0.6\columnwidth]{mirror}
-\caption{Individual mirror units~\protect\cite{acadia18}.}
+\centering
+\includegraphics[width=0.98\columnwidth]{mirror}
+\caption{Individual mirror units,
+each with pan and tilt control~\protect\cite{acadia18}.}
 \label{fig:mirror}
 \end{figure}
 
 The stepper motors are running open loop,
-%(i.e., there are no shaft encoders in the system),
+(i.e., there are no shaft encoders in the system),
 so to establish known position each
 motor is driven to the physical stops (a reset position) and then
 the Arduino Unos accept motor movement commands that include
