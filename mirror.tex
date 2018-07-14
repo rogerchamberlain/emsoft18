@@ -25,9 +25,9 @@ motor is driven to the physical stops (a reset position) and then
 the Arduino Unos accept motor movement commands that include
 mirror ID ($x$ and $y$ position in the surface), which motor (pan vs.\ tilt),
 direction, and number of steps.
-%The local Arduino Unos make no
-%attempt to retain position information, that is the responsibility
-%of the higher-level system (remote PC).
+The local Arduino Unos make no
+attempt to retain position information, that is the responsibility
+of the higher-level system.
 
 To enable movement profiles, we will extend the messaging protocol
 and use the Arduino Unos to provide more nuanced timing in their
